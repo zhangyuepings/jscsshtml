@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-23 16:02:16
+ * @LastEditTime: 2022-02-24 14:06:23
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js,css, vue,  html/js/闭包的底层理解.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        作用域链
+        会被保存到一个隐式的属性中去[[scope]]
+        这个属性是我们用户访问不到的但是的的确确是存在的让 js引擎来访问的里面存储的就是作用域链
+    </div>
+</body>
+<script>
+    var age = 25
+    function a(){
+        age = 26
+        function b(){
+            console.log(this.age)
+        }
+        b()
+        console.log(this.age)
+    }
+    a()
+
+    // function a (){
+    //     function b(){
+    //         var bb = 123
+    //         aa = 0
+    //         console.log(aa)
+    //     }
+    //     var aa = 123
+    //     b()
+    // }
+    // a()
+</script>
+</html>

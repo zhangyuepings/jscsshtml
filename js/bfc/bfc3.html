@@ -1,0 +1,43 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-23 10:41:36
+ * @LastEditTime: 2022-03-23 10:54:27
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js/bfc/bfc3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当浮动产生影响的时候，可以利用BFC来清除浮动的影响</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+    </div>
+</body>
+<style>
+    .father{
+        width: 300px;
+        background: red;
+        overflow: hidden;
+    }
+    .son{
+        width: 100px;
+        height: 30px;
+        background: blue;
+        border: 1px solid #ccc;
+        float: left; 
+        /* 当父元素没有设置高度，子元素使用浮动， 父元素就失去了原有的高度 这时候 使用BFC，将所有的浮动元素包裹起来 给父元素加overflow:hidden */
+    }
+</style>
+</html>

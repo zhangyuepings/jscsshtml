@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-14 11:17:33
+ * @LastEditTime: 2022-03-14 12:00:14
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js/for.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    objDemo = {
+        a : '1111',
+        b : '2222',
+        c : '33333'
+
+    }
+    var valuei = 'a'
+
+        // Object.keys(objDemo).forEach(key=>{
+        //     if(valuei === key){
+        //         objDemo[key]=''
+        //         console.log(objDemo[key], '--')
+        //     }
+        // })
+        for(var key in objDemo){
+            if(valuei === key){
+                objDemo[key]=''
+                console.log(objDemo[key], '--')
+            }
+        }
+
+        console.log(objDemo)
+</script>
+</html>

@@ -1,0 +1,69 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-01 16:09:54
+ * @LastEditTime: 2022-03-01 16:21:44
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js/多列布局.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=no" > -->
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="box">
+        <div class="box_1">1</div>
+        <div class="box_1">2</div>
+        <div class="box_1">3</div>
+        <div class="box_1">4</div>
+
+        <div class="box4">
+            三、多列布局
+                添加meta 响应移动端
+                1.viewport 视口
+                2.width=device-width 宽度等于屏幕的宽
+                3.initial-scale=1.0 伸缩比例1.0
+                4.minimum-scale=1.0 最小比例1.0
+                5.maximum-scale=3.0 最大比例3.0
+                6.user-scalable=no 禁止用户缩放
+        </div>
+        <div>jhsdbfhdbfh</div>
+    </div>
+</body>
+<style>
+    *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            font-size: 14px;
+        }
+        .box{
+            column-count: 4;
+            -webkit-column-count:4;
+            -moz-column-count:4;
+            column-gap: 1rem;
+            -webkit-column-gap: 1rem;
+            -moz-column-gap: 1rem;
+            column-rule: 1px solid red;
+            -webkit-column-rule: 1px solid red;
+            -moz-column-rule: 1px solid red;
+        }
+        .box_1{
+            height: 2rem;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+        .box4 {
+            column-span: all;
+            /*指的是元素里面列的宽度*/
+        }
+
+</style>
+</html>

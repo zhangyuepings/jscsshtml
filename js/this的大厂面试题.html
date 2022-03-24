@@ -1,0 +1,69 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-23 09:57:48
+ * @LastEditTime: 2022-02-23 11:15:58
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js,css, vue,  html/js/this的大厂面试题.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // // 1:在函数中直接使用
+    // function fu(name){
+    //     console.log(name) // 阿平
+    // }
+    // fu('阿平')
+    // fu.call(window, '阿平')
+
+    // // 2:函数作为对象的方法被调用(谁调用我  我就指向谁)
+    // var person = {
+    //     name: '阿平',
+    //     ru:function(time){
+    //         console.log(`${this.name}在跑步最多可以跑${time}分钟就不行了` )
+    //     }
+    // }
+    // person.ru(30)
+    // person.ru.call(person, 30)
+
+    // 阿里的笔试题
+    var name = 222 
+    var a= { 
+        name: 111, 
+        say: function (){ 
+            console.log(this.name) 
+        }
+    } 
+    var fun = a.say 
+    fun() // 222
+    // a.call(window)
+
+    a.say() // 111
+    // a.say.call(a)
+
+    var b = { 
+        name: 333, 
+        say: function(fun){ 
+            fun() // fun.call(window) 222
+        }
+    }
+
+    b.say(a.say) // 222
+    // b.say.call(b, a.say)
+
+    b.say = a.say  
+    
+    b.say() // 333
+    // b.say.call(b)
+
+</script>
+</html>

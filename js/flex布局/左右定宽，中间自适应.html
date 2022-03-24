@@ -1,0 +1,65 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-23 11:04:07
+ * @LastEditTime: 2022-03-23 14:15:38
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js/bfc/flex布局/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左右定宽，中间自适应</title>
+</head>
+<body>
+    <!-- <div class="left">left</div>
+    <div class="mid">左右定宽，中间自适应有两种方法：
+        <p>1: 父元素display：flex, 两边盒子宽度一定， 中间盒子flex:1</p>
+        <p>2: 左右盒子宽一定+flot, 中间的盒子width: 100%, margin: 两个盒子的宽</p>
+    </div>
+    <div class="right">right</div> -->
+
+    <!-- 补充一下：其实我们也可以用 float 来达到同样的效果。我们还是把关键点用一个口诀记住：中间加 margin，左右加 float，先加左右，后加中间。 -->
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="mid"></div>
+</body>
+<style>
+    /* body{
+        display: flex;
+    }
+    .left, .right{
+        width: 100px;
+        height: 200px;
+        background: red;
+    }
+    .mid{
+        flex: 1;
+        background: blue;
+    } */
+    .left{
+            float: left;
+            width:100px;
+            height: 100px;
+            background: rosybrown;
+        }
+        .right{
+            width:100px;
+            height: 100px;
+            background: cadetblue;
+            float: right;
+        }
+    .mid{
+            width:100%;
+            height: 100px;
+            background: royalblue;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        
+
+</style>
+</html>

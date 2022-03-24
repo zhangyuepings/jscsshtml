@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-23 10:16:18
+ * @LastEditTime: 2022-03-23 10:20:01
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js/bfc/用bfc解决外边距的塌陷问题.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用bfc解决外边距的塌陷问题</title>
+</head>
+<body>
+    <!-- <div class="box">111</div>
+    <div class="box">222</div> -->
+
+    <!-- 解决办法，分别在外面包一个div 给外面的盒子overflow：hidden-->
+    <div class="father">
+        <div class="box">111</div>
+    </div>
+    <div class="father">
+        <div class="box">111</div>
+    </div>
+</body>
+<style>
+    .father{
+        overflow: hidden; 
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        background: red;
+        margin: 30px;
+    }
+</style>
+</html>

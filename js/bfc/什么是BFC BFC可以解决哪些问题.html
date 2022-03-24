@@ -1,0 +1,62 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-21 17:24:36
+ * @LastEditTime: 2022-03-23 10:41:16
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js/什么是BFC BFC可以解决哪些问题.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>什么是BFC BFC可以解决哪些问题</title>
+</head>
+<body>
+    <div>
+        <h1>什么事BFC</h1>
+        <div>
+            <p>BFC是会计格式化上下文，可以把bfc理解为一个封闭的大盒子，内部的元素不会影响到外部</p>
+            <p>一个BFC区域只包含其子元素，不包括其子元素的子元素。</p>
+            <p>并不是所有的元素都能成为一块BFC区域，只有当这个元素满足条件的时候才会成为一块BFC区域。</p>
+            <p>不同的BFC区域之间是相互独立的，互不影响的。利用这个特性我们可以让不同BFC区域之间的布局不产生影响。</p>
+        </div>
+        <h1>利用BFC解决问题</h1>
+        <div>
+            <li>
+                <h4 onclick="window.location.href='./bfc1.html'">解决外边距的塌陷问题(垂直塌陷)</h4>
+            </li>
+            <li>
+                <h4 onclick="window.location.href='./bfc2.html'"> 利用BFC解决包含塌陷</h4>
+            </li>
+            <li>
+                <h4 onclick="window.location.href='./bfc3.html'">当浮动产生影响的时候，可以利用BFC来清除浮动的影响</h4>
+            </li>
+            <li>
+                <h4 onclick="window.location.href='./bfc4.html'">BFC可以阻止标准流元素被浮动元素覆盖</h4>
+            </li>
+        </div>
+        <h1>
+            3. 触发BFC
+        </h1>
+        <p>并不是任意一个元素都可以被当做BFC，只有当这个元素满足以下任意一个条件的时候，这个元素才会被当做一个BFC。</p>
+        <h1>触发BFC的条件</h1>
+        <div>
+            <li>·body根元素</li>
+            <li>·设置浮动，不包括none</li>
+            <li>·设置定位，absoulte或者fixed</li>
+            <li>·行内块显示模式，inline-block</li>
+            <li>·设置overflow，即hidden，auto，scroll</li>
+            <li>·弹性布局，flex</li>
+        </div>
+    </div>
+</body>
+<script>
+   function bfcMargin(){
+       debugger
+    window.location.href="./bfc1.html";
+    }
+</script>
+</html>

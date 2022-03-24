@@ -1,0 +1,81 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-21 11:13:12
+ * @LastEditTime: 2022-03-21 17:23:26
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js/盒子剧中.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.绝对定位的居中实现
+        2.margin: auto; 实现绝对定位元素的居中
+        3.flex弹性布局
+        4.水平居中+垂直居中+行高
+    </title>
+</head>
+<body>
+    <!-- <div class="box">
+            实现盒子剧中
+            1: 绝对定位，position: absolute
+            2: 已知盒子的宽高
+            3：不知道盒子的宽高
+    </div> -->
+    <!-- <div class="box2">3：不知道盒子的宽高</div> -->
+    <!-- <div class="box3">margin: auto; 实现绝对定位元素的居中</div> -->
+    <!-- <div class="box4"><div>flex弹性布局</div></div> -->
+    <div class="box5">水平居中+垂直居中+行高</div>
+</body>
+<style>
+    .box{
+        /* 已知盒子的宽高 */
+        width: 200px;
+        height: 200px;
+        background: green;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px; 
+        margin-top: -100px;
+        /* 宽，高的一半 */
+    }
+    .box2{
+        border: 1px solid #ccc;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .box3{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: 1px solid red;
+        margin: auto;
+
+    }
+    .box4{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background: red;
+        width: 200px;
+        height: 200px;
+    }
+    .box5{
+        width: 200px;
+        height: 200px;
+        background: blue;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 200px;
+    }
+    
+</style>
+</html>

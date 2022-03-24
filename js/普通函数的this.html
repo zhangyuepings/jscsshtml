@@ -1,0 +1,80 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-08 09:38:34
+ * @LastEditTime: 2022-03-16 14:55:10
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js/普通函数的this.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1: 谁调用指向谁
+    function foo(){
+        console.log(this, 'this')
+    }
+    // new foo() // foo{}
+
+
+    // 2: 全局指向window
+    function foo(){
+        console.log(this, 'this')
+    }
+    // foo() // window
+    
+
+    // 3.构造函数的this指向构造函数实例
+        // a: 什么是构造函数？在javascript中，用new 关键字调用的函数称为构造函数，构造函数的首字母一般都是大写
+        // b:为什么使用构造函数？比如在使用对象字面量创建一系列同一类型的对象，这些对象可能具有一些相似的特征（属性）和行为（方法）此时会产生很多重复的代码  而使用构造函数就可以实现代码复用
+        // function Person(name, gender, hobby) {
+        //     this.name = name;
+        //     this.gender = gender;
+        //     this.hobby = hobby;
+        //     this.age = 6;
+        //     console.log(this, 'this')
+        // }
+
+        // (3) 手动添加一个复杂数据类型(对象)的返回值，最终返回该对象
+        var p1 = new Person('zs', '男', 'basketball');
+        function Person4() {
+            this.gender = '男';
+            // console.log(this, 'this')
+            return { gender: '中性' };
+        }
+        var p4 = new Person4();
+        // console.log(p4);
+
+        
+        // (1) 没有手动添加返回值，默认返回 this
+        function Person1() {
+            this.name = 'zhangsan';
+        }
+        var p1 = new Person1();
+        console.log(p1)
+
+        
+        // (2) 手动添加一个基本数据类型的返回值，最终还是返回 this
+        function Person2() {
+            this.age = 28;
+            return 50;
+        }
+
+        var p2 = new Person2();
+        // console.log(p2);   // 28
+       
+
+    // 4.call/apply/bind 强制改变this指向
+
+    // 5.箭头函数的this始终指向父级上下文
+
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-23 15:06:34
+ * @LastEditTime: 2022-02-23 15:34:44
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js,css, vue,  html/js/js一般作用于的一般理解.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        js的作用域
+
+        ##作用域说明一般理解指一个变量的作用范围
+        1.全局作用域
+        (1)全局作用域在页面打开时被创建,页面关闭时被销毁
+        (2)编写在script标签中的变量和函数，作用域为全局，在页面的任意位置都可以访问到(3)在全局作用域中有全局对象window,代表一个浏览器窗口，由浏览器创建，可以直接调用(4)全局作用域中声明的变量和函数会作为window对象的属性和方法保存
+        2.函数作用域
+        (1)调用数时，数作用域被创建，函数执行完毕，函数作用域被销毁
+        (2)每调用一次函数就会创建一个新的函数作用域，他们之间是相互独立的
+        (3)在函数作用域中可以访问到全局作用域的变量，在函数外无法访问到函数作用域内的变量
+        (4)在函数作用域中访问变量、函数时，会先在自身作用域中寻找，若没有找到，则会到函数的上一级作用域中寻找，一直到全局作用域
+
+
+        ##作用域的深层次理解 I 
+        执行期的上下文
+        当函数代码执行的前期会创建一个执行期上下文的内部对象A0(作用域)
+        这个内部的对象是预编译的时候创建出来的因为当函数被调用的时候 会先进行预编译在全局代码执行的前期会创建一个执行期的上下文的对象GO
+        这里有关is的预编译也简单的提一下
+
+        # 函数作用域预编译
+        1.创建ao对象AO{}
+        2.找形参和变量声明将变量和形参名当做A0对象的属性名值为undefined
+        3.实参形参相统一
+        4，在函数体里面找函数声明值赋予函数体# 全局作用域的预编译
+
+
+        1.创建GO对象
+        2.找变量声明将变量名作为G0对象的属性名值是undefined
+        找函数声明 值赋予函数体
+    </div>
+</body>
+<script>
+    // 阿里巴巴的笔试题 
+    function fn(a, c){
+        console.log(a) // function a() { }
+        var a = 123 
+        console.log(a) // 123
+        console.log(c)  // function c() { }
+        function a() { } 
+        if(false){ 
+            var d = 678
+        }
+        console.log(d) // undefined
+        console.log(b) // undefined
+        var b = function() { } // 不叫作函数声明 叫作函数的表达式
+        console.log(b) // function() { }
+        function c() { } 
+        console.log(c) // function c() { }
+    }
+    fn(1, 2)
+</script>
+</html>

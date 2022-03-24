@@ -1,0 +1,57 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-23 09:21:38
+ * @LastEditTime: 2022-02-23 09:54:44
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /js,css, vue,  html/js/预编译.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+编译问题 
+
+.预编译 
+    作用域的创建阶段 预编译的阶段 
+    预编译的时候做了哪些事情 
+    js的变量对象 AO对象 供js引擎自己去访问的 
+    1 创建了ao对象
+    2 找形参和变量的声明 作为ao对象的属性名值是undefined 
+    3 实参和形参相统一
+    4 找函数声明 会覆盖变量的声明
+    5 js的解释执行 逐行执行  
+    </div>
+</body>
+<script>
+    console.log(a) 
+    console.log(c)
+    var a = 4
+    var c = 5
+    var b = 6
+    function fn(a, c){
+        console.log(a)
+        var a = 123 
+        console.log(a)
+        console.log(c)
+        function a() { } 
+        if(false){ 
+            var d = 678 
+            console.log(d)
+        }
+        console.log(b)
+        var b = function () { } 
+        console.log(b)
+        function c() {} 
+        console.log(c)
+    }
+    fn(1, 2) 
+</script>
+</html>
