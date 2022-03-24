@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-23 17:19:32
- * @LastEditTime: 2022-03-23 17:33:15
+ * @LastEditTime: 2022-03-24 10:33:18
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /js/ js的数据类型有哪些？如何检测数据类型？如何判断引用类型？/index.html
@@ -22,7 +22,30 @@
     </div>
     <div>
         <h1>如何检测数据类型？</h1>
-        
+        <p>typeof 常用余5检查基本类型</p>
+        <p>instanceof 常用于检查复杂类型（引用类型）</p>
+        <h1>区分数组和对象</h1>
+        <p>判断是否是数组instanceof constructor  
+            <span>数组 instanceof Array </span>
+            <span>数组.constructor === Array</span>
+        </p>
+        <p>判断数据类型是object
+            <span>对象 instanceof object</span>
+        </p>
+        <p>Object.prototype.toString()  可以用来准确地检测所有数据类型 对于 Object 对象，直接调用 toString()  就能返回 [object Object] 。而对于其他对象，则需要通过 call / apply 来调用才能返回正确的类型信息。</p>
+        <div>Object.prototype.toString.call('') ;   // [object String]
+            Object.prototype.toString.call(1) ;    // [object Number]
+            Object.prototype.toString.call(true) ; // [object Boolean]
+            Object.prototype.toString.call(Symbol()); //[object Symbol]
+            Object.prototype.toString.call(undefined) ; // [object Undefined]
+            Object.prototype.toString.call(null) ; // [object Null]
+            Object.prototype.toString.call(new Function()) ; // [object Function]
+            Object.prototype.toString.call(new Date()) ; // [object Date]
+            Object.prototype.toString.call([]) ; // [object Array]
+            Object.prototype.toString.call(new RegExp()) ; // [object RegExp]
+            Object.prototype.toString.call(new Error()) ; // [object Error]
+            Object.prototype.toString.call(document) ; // [object HTMLDocument]
+            Object.prototype.toString.call(window) ; //[object global] window 是全局对象 global 的引用</div>
     </div>
     <div>
         <h1>如何判断引用类型？</h1>
