@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-24 16:13:31
- * @LastEditTime: 2022-03-24 16:13:31
+ * @LastEditTime: 2022-03-25 16:40:13
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /jscsshtml/js数组去重/index.html
@@ -15,6 +15,71 @@
     <title>js数组去重</title>
 </head>
 <body>
-    
+    <div>
+        <h1>遍历数组法 :</h1>
+        <p>1: (forEach, for, map) indexOf</p>
+        <p>indexOf()方法如果查询到则返回查询到的第一个结果在数组中的索引，
+            如果查询不到则返回-1</p>
+        <h1>数组下标判断法</h1>
+        <p>indexof()方法只返回找到的第一个值的索引，所以重复的都会被pass掉，
+            只出现一次的值都被存入新数组中，也达到了去重的目的</p>
+        <p>返回的索引等于当前的循环里面的i的话，那么证明这个值是第一次出现，所以推入到新数组里面，
+            如果后面又遍历到了一个出现过的值，那也不会返回它的索引，</p>
+        <h1>排序后相邻去除法 用到了sort()</h1>
+        <h1>数组遍历法 两层for循环</h1>
+    </div>
 </body>
+<script>
+    var arr = [1,2,3,4,2,3,7,8,1]
+    var newArr = []
+    // arr.forEach(item =>{
+    //     if(newArr.indexOf(item) === -1){
+    //         newArr.push(item)
+    //     }
+    // })
+
+    // for(var i=0; i < arr.length; i++){
+    //     if(newArr.indexOf(arr[i]) === -1){
+    //         newArr.push(arr[i])
+    //     }
+    // }
+
+    // arr.map(item =>{
+    //     if(newArr.indexOf(item) === -1){
+    //         return newArr.push(item)
+    //     }
+    // })
+
+    // for (var i = 0; i < arr.length; i++) {
+    //     if(arr.indexOf(arr[i]) === i){
+    //         newArr.push(arr[i])
+    //     }
+    // }
+    
+    // arr.sort() // 正排
+    // newArr = [arr[0]]
+    // for(var i =1; i<arr.length; i++){
+    //     if(arr[i] !== newArr[newArr.length -1]){
+    //         newArr.push(arr[i])
+    //     }
+    // }
+
+    for(var i = 0; i < arr.length; i++){
+        var bl = true
+
+        for(var j = 0; j < newArr.length; j++){
+            if(arr[i] === arr[j]){
+                bl = false
+                break
+                
+            }
+            
+        }
+        if(bl){
+                newArr.push(arr[i])
+            }
+    }
+        
+    console.log(newArr, '---')
+</script>
 </html>
