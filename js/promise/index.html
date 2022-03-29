@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-25 16:44:28
- * @LastEditTime: 2022-03-25 16:44:28
+ * @LastEditTime: 2022-03-29 09:56:43
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /jscsshtml/js/promise/index.html
@@ -15,6 +15,27 @@
     <title>promise</title>
 </head>
 <body>
-    
+    <div>
+        <h1>什么是 Promise</h1>
+        <p>Promise 是异步编程的一种解决方案， 比传统的异步解决方案
+            【回调函数】和【事件】更合理，更强大。已被es6纳入规范中</p>
+        <h1>Promise 常用 API</h1>
+        <div>
+            <h3>Promise.resolve(value)</h3>
+            <p>如果传入的 value 值 本身就是Promise对象，则该对象作为Promise.resolve()方法的返回值返回 </p>
+        </div>
+    </div>
 </body>
+<script>
+    function pro (resolve){
+        console.log(resolve, '2345')
+        // setTimeout(function(){
+        //     resolve(123)
+        // }, 3000)
+    }
+    let p0 = 123 // new Promise(pro)
+    let p1 = Promise.resolve(p0)
+    console.log(p1===p0)
+
+</script>
 </html>
