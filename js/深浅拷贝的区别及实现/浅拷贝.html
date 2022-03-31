@@ -1,0 +1,61 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-31 15:46:34
+ * @LastEditTime: 2022-03-31 16:36:41
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /jscsshtml/js/深浅拷贝的区别及实现/浅拷贝.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浅拷贝</title>
+</head>
+<body>
+    <div>
+        <p>浅拷贝只是复制指向某个对象的指针，而不是复制对象本身，新旧对象还是共享一个内存</p>
+        <h3>Object.assign() 当object只有一层的时候，是深拷贝</h3>
+        <h3>Array.prototype.concat() 修改新对象会改到原对象</h3>
+        <h3>Array.prototype.slice()  修改新对象会改到原对象</h3>
+        <h3></h3>
+    </div>
+</body>
+<script>
+    // var obj1 = {
+    //     name: '阿平',
+    //     age:'21',
+    //     arr:['1', '2', '3']
+    // }
+    // // Object.assign() 拷贝的是对象属性的引用，而不是对象本身。
+    // var obj2 = Object.assign({}, obj1)
+    // obj2.name = '小贾子'
+    // obj2.arr[1] = 'pp'
+    // console.log(obj1, obj2, '====')
+    
+
+    // var obj = { a: {a: "kobe", b: 39} };
+    // var initalObj = Object.assign({}, obj);
+    // initalObj.a.a = "wade";
+    // console.log(obj, initalObj); // wade
+
+    // 当object只有一层的时候，是深拷贝
+    // var obj = {
+    //     username: 'kobe'
+    // };
+    // var obj2 = Object.assign({},obj);
+    // obj2.username = 'wade';
+    // console.log(obj, obj2);//{username: "kobe"}
+
+    var arr1 = [1, 2, 3]
+    var arr2 = arr1.concat()
+    arr2[1] = '阿平'
+    var arr3 = arr1.slice()
+    arr3[2] = '阿鑫'
+    console.log(arr1, arr2, arr3)
+
+
+</script>
+</html>
