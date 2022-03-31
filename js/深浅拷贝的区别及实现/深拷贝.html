@@ -1,0 +1,61 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-03-31 16:38:31
+ * @LastEditTime: 2022-03-31 17:06:34
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /jscsshtml/js/深浅拷贝的区别及实现/深拷贝.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷贝</title>
+</head>
+<body>
+    <p>深拷贝：另外创建一个新的对象，新的对象跟原来的对象不共享一个内存， 修改新对象不会改变原对象</p>
+    <h1>JSON.parse(JSON.stringify())</h1>
+    <p>
+        原理： 用JSON.stringify将对象转成JSON字符串，再用JSON.parse()把字符串解析成对象，
+        一去一来，新的对象产生了，而且对象会开辟新的栈，实现深拷贝。
+        <strong>这种方法虽然可以实现数组或对象深拷贝，但不能处理函数。</strong>
+        <span>
+            这是因为 JSON.stringify() 方法是将一个JavaScript值(对象或者数组)转换为一个 JSON字符串，不能接受函数。
+        </span>
+    </p>
+    <h1>3. 函数库lodash</h1>
+    <h2> 手写递归方法</h2>
+</body>
+<script>
+    // JSON.parse(JSON.stringify(arr))
+    var obj1 = {
+        name: 'zyp',
+        arr: [1, 2]
+    }
+    // var obj2 = JSON.parse(JSON.stringify(obj1))
+    // obj2.arr[1] = 'ax'
+    // console.log(obj1, obj2)
+
+    // 该函数库也有提供 _.cloneDeep 用来做 Deep Copy
+    // var _ = require('lodash');
+    // var obj1 = {
+    // a: 1,
+    // b: { f: { g: 1 } },
+    // c: [1, 2, 3]
+    // };
+    // var obj2 = _.cloneDeep(obj1);
+    // console.log(obj1.b.f === obj2.b.f);
+    // false
+
+    function fun (n){
+        if(n == 1){
+            return 1
+        }
+        return n * fun((n-1))
+    }
+    console.log(fun(10))
+    // https://blog.csdn.net/creabine/article/details/79027419
+</script>
+</html>
