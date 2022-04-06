@@ -1,0 +1,36 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-01 10:15:21
+ * @LastEditTime: 2022-04-01 10:15:21
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /jscsshtml/vue/vue的生命周期.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue的生命周期</title>
+</head>
+<body>
+    <div>
+        vue的生命周期分为四个过程：
+        创建过程（beforeCreate、created）
+        挂载过程（beforeMount、mounted）
+        更新过程（beforeUpdate、updated）
+        销毁过程（beforeDestroy、destroyed）
+
+        ① beforeCreate (创建前)：当前生命周期el和data尚未初始化，还不能访问data、methods、computed、watch上的方法和数据 【可以在这里加个loading加载事件】
+        ② created (创建后)：当前生命周期data初始化完成，可以访问data、methods、computed、watch上的方法和数据，el初始化还没完成所以还不能访问【前后端数据交互，使用ajax请求数据】
+        ③ beforeMount (挂载前)：在挂载开始之前被调用，挂载元素，获取到DOM节点
+        ④ mounted (挂载后)：可以操作DOM节点 【第三方插件的初始化：视频播放器、地图等】
+        ⑤ beforeUpdate (更新前)：页面数据更新前调用，监听数据的改变，并且可以获取到最新的数据，但是不会更新页面的数据
+        ⑥ updated (更新后)：当前生命周期更新的数据与模板结合完毕
+        ⑦ beforeDestroy (销毁前)：实例销毁之前调用
+        ⑧ destroyed (销毁后)：实例销毁后调用 【可以做一些移除的操作：清除定时器，事件的解绑】
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-06 09:55:35
+ * @LastEditTime: 2022-04-06 10:54:53
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /jscsshtml/js/bfc/解决垂直边距重叠/同级兄弟的重叠.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">son1 </div>
+        <div class="son2">son2</div>
+    </div>
+</body>
+<style>
+    .father{
+        background: red;
+        display: flex;
+        flex-direction: column;
+    }
+    .son1{
+        margin: 20px;
+        background: green;
+    }
+    .son2{
+        margin: 40px;
+        background: goldenrod;
+    }
+    /* .father:nth-child(2){
+        overflow: hidden;
+    } */
+</style>
+</html>
